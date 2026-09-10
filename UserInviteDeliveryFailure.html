@@ -98,22 +98,24 @@
 
           <!-- Header -->
           <tr>
-            <td class="dark-mode-border" style="padding:16px 24px; border-bottom:1px solid #F5F5F5;">
+            <td class="dark-mode-border" style="padding:16px 24px 15px 24px; border-bottom:1px solid #F5F5F5;">
               <a href="https://www.irontrac.com/" target="_blank">
                 <!-- Light Mode Logo -->
                 <img
                   src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-dark.png"
                   width="144"
+                  height="29"
                   alt="IronTrac Logo"
                   class="light-logo"
                   style="display:block; border:0;"
                 >
-                
+
                 <!-- Dark Mode Logo -->
-                
+
                 <img
                   src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-white.png"
                   width="144"
+                  height="29"
                   alt="IronTrac Logo"
                   class="dark-logo"
                   style="display:none; border:0;"
@@ -130,19 +132,16 @@
               </h1>
 
               <p style="margin:24px 0 0 0; font-size:16px; color:#344054; line-height:24px;">
-                Hello {{inviter_name}}
+                Hello {{inviter_name}},
               </p>
 
               <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
                 The invitation sent to {{invitee_name}} could not be delivered.
               </p>
 
-              <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054; padding-right: 10px;">
-                You must update the email or resend the invitation after correcting the issue.
-              </p>
-
               <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
-                To ensure continuous operation, you must either schedule calibration for the equipment or disable/decommission it from service if it is no longer needed.
+                You must update the email or resend the invitation after correcting<br>
+                the issue.
               </p>
             </td>
           </tr>
@@ -178,14 +177,19 @@
                                 Robert Mike
                               </td>
                               <td align="right">
-                                <span class="dark-mode-failed-status" style="background:#fdefef;
+                                <span class="dark-mode-failed-status" style="background:rgba(235, 87, 87, 0.1);
                                             color:#EB5757;
                                             font-size:12px;
                                             font-weight:500;
-                                            padding:5px 12px;
+                                            line-height:18px;
+                                            box-sizing:border-box;
+                                            width:59px;
+                                            height:26px;
+                                            padding:4px 12px;
                                             border-radius:7px;
                                             border:1px solid #EB5757;
-                                            display:inline-block;">
+                                            display:inline-block;
+                                            text-align:center;">
                                   Failed
                                 </span>
                               </td>
@@ -198,7 +202,7 @@
                       <tr>
                         <td style="padding:12px; padding-top:0;
                                   font-size:12px; color:#4f4f4f; line-height:18px;">
-                          <table width="100%">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
                               <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Invitee Email</td>
                               <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
@@ -212,8 +216,8 @@
                               </td>
                             </tr>
                             <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Timestamp</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
+                              <td class="dark-mode-eeeeee" style="width: 140px;">Timestamp</td>
+                              <td class="dark-mode-f5f5f5" align="right" style="color:#333333; font-weight:500;">
                                 {{failure_timestamp}}
                               </td>
                             </tr>
@@ -229,25 +233,10 @@
             </td>
           </tr>
 
-          <!-- CTA Button -->
-          <tr>
-            <td align="center" style="padding:0 24px 24px 24px;">
-              <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" bgcolor="#175FFF" style="background:#175FFF; border-radius:12px; padding:12px 24px;">
-                    <a href="#" target="_blank" style="display:inline-block; font-size:16px; font-weight:500; line-height:24px; color:#FFFFFF; text-decoration:none; font-family: inter, Arial, sans-serif;">
-                      Schedule Calibration Now
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
           <!-- Footer Bottom Row -->
           <tr>
             <td class="footer-text dark-mode-border" style="border-top:1px solid #f5f5f5;
-                       padding:16px 24px 0 24px;
+                       padding:15px 24px 0 24px;
                        font-size:14px;
                        color:#667085;
                        line-height:20px;">
@@ -264,7 +253,7 @@
 
           <!-- Footer Bottom Row -->
           <tr>
-            <td style="padding:10px 24px 24px 24px;">
+            <td style="padding:8px 24px 24px 24px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td class="mobile-stack-center footer-text" style="font-size:12px; color:#667085; line-height:18px; font-weight: 400;">
@@ -294,7 +283,8 @@
                     <a href="https://www.irontrac.com/" target="_blank">
                       <img
                         src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-dark.png"
-                        width="144"
+                        width="118"
+                        height="24"
                         alt="IronTrac Logo"
                         class="light-logo"
                         style="display:block; border:0;"
@@ -305,7 +295,8 @@
                     <a href="https://www.irontrac.com/" target="_blank">
                       <img
                         src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-white.png"
-                        width="144"
+                        width="118"
+                        height="24"
                         alt="IronTrac Logo"
                         class="dark-logo"
                         style="display:none; border:0;"
