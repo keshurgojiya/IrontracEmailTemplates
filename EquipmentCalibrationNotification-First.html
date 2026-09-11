@@ -3,21 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Equipment Due for Calibration</title>
+
+  <!-- Outlook + Dark Mode Fix -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+
+  <!-- Force Outlook DPI -->
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
 
   <style>
     @media only screen and (max-width:600px) {
       .container {
         width: 100% !important;
       }
-      .mobile-center {
-        text-align: center !important;
-      }
+
       .mobile-stack {
         display: block !important;
         width: 100% !important;
         text-align: center !important;
       }
+
+      .footer-text {
+        text-align: center !important;
+      }
+    }
+
+    @media only screen and (max-width:400px) {
+      .mobile-row-label,
+      .mobile-row-value {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .mobile-row-value {
+        text-align: left !important;
+        padding-top: 2px !important;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      body {
+        background-color: #282828 !important;
+      }
+
+      table {
+        background-color: #333333 !important;
+      }
+
+      .email-bg-wrapper {
+        background-color: #282828 !important;
+      }
+
+      h1, h2, h3, p, strong {
+        color: #eeeeee !important;
+      }
+
+      .dark-mode-eeeeee {
+        color: #eeeeee !important;
+      }
+
+      .dark-mode-f5f5f5 {
+        color: #f5f5f5 !important;
+      }
+
+      .footer-text {
+        color: #bdbdbd !important;
+      }
+
+      .light-logo {
+        display: none !important;
+      }
+
+      .dark-logo {
+        display: block !important;
+      }
+
+      .dark-mode-border {
+        border-color: #4f4f4f !important;
+      }
+
+      .dark-mode-heading-white {
+        color: #ffffff !important;
+      }
+
+      .dark-mode-h2-theme {
+        color: #f8fbfd !important;
+      }
+
+      .dark-mode-due-soon-status {
+        background: #423f34 !important;
+        color: #ccad3f !important;
+        border-color: #ccad3f !important;
+      }
+
+      .dark-mode-warning-box {
+        background: #463f35 !important;
+      }
+    }
+
+    /* Outlook.com dark mode (data-ogsc/data-ogsb) */
+    [data-ogsc] body,
+    [data-ogsb] body {
+      background-color: #282828 !important;
+    }
+
+    [data-ogsc] table,
+    [data-ogsb] table {
+      background-color: #333333 !important;
+    }
+
+    [data-ogsc] .email-bg-wrapper,
+    [data-ogsb] .email-bg-wrapper {
+      background-color: #282828 !important;
+    }
+
+    [data-ogsc] h1,
+    [data-ogsc] h2,
+    [data-ogsc] h3,
+    [data-ogsc] p,
+    [data-ogsc] strong,
+    [data-ogsb] h1,
+    [data-ogsb] h2,
+    [data-ogsb] h3,
+    [data-ogsb] p,
+    [data-ogsb] strong {
+      color: #eeeeee !important;
+    }
+
+    [data-ogsc] .dark-mode-eeeeee,
+    [data-ogsb] .dark-mode-eeeeee {
+      color: #eeeeee !important;
+    }
+
+    [data-ogsc] .dark-mode-f5f5f5,
+    [data-ogsb] .dark-mode-f5f5f5 {
+      color: #f5f5f5 !important;
+    }
+
+    [data-ogsc] .footer-text,
+    [data-ogsb] .footer-text {
+      color: #bdbdbd !important;
+    }
+
+    [data-ogsc] .light-logo,
+    [data-ogsb] .light-logo {
+      display: none !important;
+    }
+
+    [data-ogsc] .dark-logo,
+    [data-ogsb] .dark-logo {
+      display: block !important;
+    }
+
+    [data-ogsc] .dark-mode-border,
+    [data-ogsb] .dark-mode-border {
+      border-color: #4f4f4f !important;
+    }
+
+    [data-ogsc] .dark-mode-heading-white,
+    [data-ogsb] .dark-mode-heading-white {
+      color: #ffffff !important;
+    }
+
+    [data-ogsc] .dark-mode-h2-theme,
+    [data-ogsb] .dark-mode-h2-theme {
+      color: #f8fbfd !important;
+    }
+
+    [data-ogsc] .dark-mode-due-soon-status,
+    [data-ogsb] .dark-mode-due-soon-status {
+      background: #423f34 !important;
+      color: #ccad3f !important;
+      border-color: #ccad3f !important;
+    }
+
+    [data-ogsc] .dark-mode-warning-box,
+    [data-ogsb] .dark-mode-warning-box {
+      background: #463f35 !important;
     }
   </style>
 </head>
@@ -25,22 +199,33 @@
 <body style="margin:0; padding:0; background-color:#F8FBFD; font-family: inter, Arial, sans-serif;">
 
   <!-- Wrapper -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8FBFD">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8FBFD" style="width:100%;" class="email-bg-wrapper">
     <tr>
       <td align="center" style="padding:32px 10px;">
 
         <!-- Main Container -->
         <table width="100%" cellpadding="0" cellspacing="0" border="0"
-               style="max-width:576px; background:#FFFFFF;" class="container">
+               style="max-width:576px; background:#FFFFFF; overflow:hidden;" class="container">
 
           <!-- Header -->
           <tr>
-            <td style="padding:16px 24px; border-bottom:1px solid #f5f5f5;">
+            <td class="dark-mode-border" style="padding:16px 24px 15px 24px; border-bottom:1px solid #f5f5f5;">
               <a target="_blank" href="https://www.irontrac.com/" style="text-decoration:none;">
+                <!-- Light Mode Logo -->
                 <img src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-dark.png"
                      width="144"
+                     height="29"
                      alt="IronTrac"
+                     class="light-logo"
                      style="display:block; border:0; outline:none; text-decoration:none;">
+
+                <!-- Dark Mode Logo -->
+                <img src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-white.png"
+                     width="144"
+                     height="29"
+                     alt="IronTrac"
+                     class="dark-logo"
+                     style="display:none; border:0; outline:none; text-decoration:none;">
               </a>
             </td>
           </tr>
@@ -48,7 +233,7 @@
           <!-- Title Section -->
           <tr>
             <td style="padding:24px;">
-              <h1 style="margin:0; font-size:20px; font-weight:600; color:#101828; line-height:28px;">
+              <h1 class="dark-mode-heading-white" style="margin:0; font-size:20px; font-weight:600; color:#101828; line-height:28px;">
                 Equipment Due for Calibration within 30 Days
               </h1>
 
@@ -57,8 +242,8 @@
               </p>
 
               <p style="margin:16px 0 0 0; font-size:16px; line-height:24px; color:#344054;">
-                The following equipment items have calibration due within the next 30 days.
-                Please review the list and schedule calibration to ensure compliance.
+                The following equipment items have calibration due within the next<br>
+                30 days. Please review the list and schedule calibration to ensure compliance.
               </p>
             </td>
           </tr>
@@ -66,7 +251,7 @@
           <!-- Equipment List Heading -->
           <tr>
             <td style="padding:0 24px 16px 24px;">
-              <h2 style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
+              <h2 class="dark-mode-h2-theme" style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
                 Equipment List
               </h2>
             </td>
@@ -75,26 +260,32 @@
           <!-- Equipment Card -->
           <tr>
             <td style="padding:0 24px 24px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+              <table class="dark-mode-border" width="100%" cellpadding="0" cellspacing="0" border="0"
                      style="border:1px solid #EEEEEE; border-radius:8px;">
 
                 <!-- Card Header -->
                 <tr>
                   <td style="padding:12px;">
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                    <table class="dark-mode-border" width="100%" cellpadding="0" cellspacing="0" border="0"
                            style="padding-bottom: 12px; border-bottom:1px solid #eeeeee;">
                       <tr>
-                        <td style="font-size:14px; font-weight:600; color:#344054; line-height:20px;">
+                        <td class="dark-mode-eeeeee" style="font-size:14px; font-weight:600; color:#344054; line-height:20px;">
                           E-MTG VB01747
                         </td>
                         <td align="right">
-                          <span style="background:#faf7ec;
+                          <span class="dark-mode-due-soon-status" style="background:#FEFAEE;
                                        color:#CCAD3F;
                                        font-size:12px;
-                                       padding:5px 12px;
+                                       font-weight:500;
+                                       line-height:18px;
+                                       box-sizing:border-box;
+                                       width:80px;
+                                       height:26px;
+                                       padding:4px 12px;
                                        border-radius:7px;
                                        border:1px solid #CCAD3F;
-                                       display:inline-block;">
+                                       display:inline-block;
+                                       text-align:center;">
                             Due Soon
                           </span>
                         </td>
@@ -108,32 +299,32 @@
                   <td style="padding:12px; padding-top: 0px; font-size:12px; color:#4f4f4f; line-height:18px;">
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
-                        <td style="padding-bottom:6px;">Serial Number</td>
-                        <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
+                        <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px;">Serial Number</td>
+                        <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:600;">
                           6545-01747
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding-bottom:6px;">Manufacturer</td>
-                        <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
+                        <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px;">Manufacturer</td>
+                        <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:600;">
                           Flow Valve
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding-bottom:6px;">Type</td>
-                        <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
+                        <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px;">Type</td>
+                        <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:600;">
                           Typenew
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding-bottom:6px;">Calibration Due Date</td>
-                        <td align="right" style="padding-bottom:6px; color:#333333; font-weight:500;">
+                        <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px;">Calibration Due Date</td>
+                        <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:600;">
                           07/16/2021
                         </td>
                       </tr>
                       <tr>
-                        <td>Facility</td>
-                        <td align="right" style="color:#333333; font-weight:500;">
+                        <td class="dark-mode-eeeeee mobile-row-label">Facility</td>
+                        <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="color:#333333; font-weight:600;">
                           Plug Valve
                         </td>
                       </tr>
@@ -148,16 +339,17 @@
           <!-- Warning Box -->
           <tr>
             <td style="padding:0 24px 24px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                style="background:#fefaee; border-radius:8px; padding:8px 12px;">
+              <table class="dark-mode-warning-box" width="100%" cellpadding="0" cellspacing="0" border="0"
+                style="background:#FEFAEE; border-radius:8px; padding:8px 12px;">
                 <tr>
                   <td valign="top" style="width:22px; padding-right: 8px; padding-top: 2px;">
                     <img src="https://neosgold.blob.core.windows.net/public-images/warning.png"
                          width="20"
+                         height="20"
                          alt="Warning"
                          style="display:block; border:0;">
                   </td>
-                  <td style="font-size:14px;
+                  <td class="dark-mode-eeeeee" style="font-size:14px;
                              color:#333333;
                              line-height:20px;">
                     To ensure continuous operation, please schedule calibration
@@ -170,22 +362,13 @@
 
           <!-- Footer Text -->
           <tr>
-            <td style="border-top:1px solid #f5f5f5;
-                       padding:16px 24px 0 24px;
+            <td class="footer-text dark-mode-border" style="border-top:1px solid #f5f5f5;
+                       padding:15px 24px 0 24px;
                        font-size:14px;
                        color:#667085;
                        line-height:20px;">
-              This email was sent to
-              <a href="mailto:irontrac@mail.com"
-                 style="color:#2563EB; text-decoration:none;">
-                irontrac@mail.com
-              </a>.
-              If you'd rather not receive this kind of email, you can
-              <a href="#" style="color:#2563EB; text-decoration:none;">unsubscribe</a>
-              or
-              <a href="#" style="color:#2563EB; text-decoration:none;">
-                manage your email preferences
-              </a>.
+              This email was sent to you as part of your IronTrac account notifications. If you have questions, contact us at
+              <a href="mailto:info@irontrac.com" style="color:#2563EB; text-decoration:none;">info@irontrac.com</a>.
             </td>
           </tr>
 
@@ -194,17 +377,17 @@
             <td style="padding:8px 24px 24px 24px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td class="mobile-stack"
+                  <td class="mobile-stack footer-text"
                       style="font-size:12px; color:#667085; line-height:18px;">
-                    © 2025 IronTrac, Do not reply to this email.
+                    © 2025 Irontrac, Do not reply to this email.
                   </td>
 
-                  <td align="right" class="mobile-stack"
-                      style="font-size:12px; color:#828282;">
-                    <a href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
+                  <td align="right" class="mobile-stack footer-text"
+                      style="font-size:10px; color:#828282; line-height:18px;">
+                    <a class="footer-text" href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
                       Privacy Policy
-                    </a> | 
-                    <a href="#" style="color:#828282; text-decoration:none;">
+                    </a> |
+                    <a class="footer-text" href="#" style="color:#828282; text-decoration:none;">
                       Terms link
                     </a>
                   </td>
@@ -219,11 +402,24 @@
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td>
+                    <!-- Light Mode Logo -->
                     <a href="https://www.irontrac.com/" target="_blank">
                       <img src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-dark.png"
-                           width="120"
+                           width="118"
+                           height="24"
                            alt="IronTrac Logo"
+                           class="light-logo"
                            style="display:block; border:0;">
+                    </a>
+
+                    <!-- Dark Mode Logo -->
+                    <a href="https://www.irontrac.com/" target="_blank">
+                      <img src="https://neosgold.blob.core.windows.net/public-images/irontrac-logo-white.png"
+                           width="118"
+                           height="24"
+                           alt="IronTrac Logo"
+                           class="dark-logo"
+                           style="display:none; border:0;">
                     </a>
                   </td>
                 </tr>
