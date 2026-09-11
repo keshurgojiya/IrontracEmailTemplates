@@ -32,10 +32,6 @@
         width: 100% !important;
       }
 
-      .mobile-center {
-        text-align: center !important;
-      }
-
       .mobile-stack-center {
         display: block !important;
         width: 100% !important;
@@ -49,6 +45,23 @@
         padding-right:0 !important;
         margin-bottom:16px !important;
       }
+
+      .footer-text {
+        text-align: center !important;
+      }
+    }
+
+    @media only screen and (max-width:400px) {
+      .mobile-row-label,
+      .mobile-row-value {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .mobile-row-value {
+        text-align: left !important;
+        padding-top: 2px !important;
+      }
     }
 
     @media (prefers-color-scheme: dark) {
@@ -59,6 +72,10 @@
 
       table {
         background-color: #333333 !important;
+      }
+
+      .email-bg-wrapper {
+        background-color: #282828 !important;
       }
 
       h1, h2, h3, p, strong {
@@ -92,11 +109,26 @@
       .dark-mode-border {
         border-color: #4f4f4f !important;
       }
+
+      .dark-mode-h2-theme {
+        color: #f8fbfd !important;
+      }
     }
 
+    /* Outlook.com dark mode (data-ogsc/data-ogsb) */
     [data-ogsc] body,
     [data-ogsb] body {
-      background-color:#282828 !important;
+      background-color: #282828 !important;
+    }
+
+    [data-ogsc] table,
+    [data-ogsb] table {
+      background-color: #333333 !important;
+    }
+
+    [data-ogsc] .email-bg-wrapper,
+    [data-ogsb] .email-bg-wrapper {
+      background-color: #282828 !important;
     }
 
     [data-ogsc] h1,
@@ -109,15 +141,55 @@
     [data-ogsb] h3,
     [data-ogsb] p,
     [data-ogsb] strong {
-      color:#eeeeee !important;
+      color: #eeeeee !important;
+    }
+
+    [data-ogsc] .dark-mode-eeeeee,
+    [data-ogsb] .dark-mode-eeeeee {
+      color: #eeeeee !important;
+    }
+
+    [data-ogsc] .dark-mode-f5f5f5,
+    [data-ogsb] .dark-mode-f5f5f5 {
+      color: #f5f5f5 !important;
+    }
+
+    [data-ogsc] .footer-text,
+    [data-ogsb] .footer-text {
+      color: #bdbdbd !important;
+    }
+
+    [data-ogsc] .light-logo,
+    [data-ogsb] .light-logo {
+      display: none !important;
+    }
+
+    [data-ogsc] .dark-logo,
+    [data-ogsb] .dark-logo {
+      display: block !important;
+    }
+
+    [data-ogsc] .blue-links,
+    [data-ogsb] .blue-links {
+      color: #175FFF !important;
+    }
+
+    [data-ogsc] .dark-mode-border,
+    [data-ogsb] .dark-mode-border {
+      border-color: #4f4f4f !important;
+    }
+
+    [data-ogsc] .dark-mode-h2-theme,
+    [data-ogsb] .dark-mode-h2-theme {
+      color: #f8fbfd !important;
     }
   </style>
 </head>
 
-<body style="margin:0; padding:0; background-color:#F8FBFD; font-family: inter, Arial, sans-serif;padding:32px 10px;">
+<body style="margin:0; background-color:#F8FBFD; font-family: inter, Arial, sans-serif; padding:32px 10px;">
 
   <!-- Wrapper -->
-  <table align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8FBFD">
+  <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8FBFD" style="width:100%;" class="email-bg-wrapper">
     <tr>
       <td align="center">
 
@@ -170,7 +242,7 @@
           <!-- Failure Details Heading -->
           <tr>
             <td style="padding:0 24px 8px 24px;">
-              <h2 style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
+              <h2 class="dark-mode-h2-theme" style="margin:0; font-size:16px; font-weight:600; color:#344054; line-height:24px;">
                 Invitation Details:
               </h2>
             </td>
@@ -183,7 +255,7 @@
                 <tr>
 
                   <!-- RIGHT CARD -->
-                  <td class="mobile-stack" width="50%" valign="top">
+                  <td class="mobile-stack" width="100%" valign="top">
 
                     <table class="dark-mode-border" width="100%" cellpadding="0" cellspacing="0" border="0"
                       style="border:1px solid #EEEEEE; border-radius:8px;">
@@ -211,20 +283,20 @@
                                   font-size:12px; color:#4f4f4f; line-height:18px;">
                           <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Invitee Email</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
+                              <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px; width: 140px;">Invitee Email</td>
+                              <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
                                 {{invitee_email}}
                               </td>
                             </tr>
                             <tr>
-                              <td class="dark-mode-eeeeee" style="padding-bottom:8px; width: 140px;">Invitation Sent On</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
+                              <td class="dark-mode-eeeeee mobile-row-label" style="padding-bottom:8px; width: 140px;">Invitation Sent On</td>
+                              <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="padding-bottom:8px; color:#333333; font-weight:500;">
                                {{invitation_sent_date}}
                               </td>
                             </tr>
                             <tr>
-                              <td class="dark-mode-eeeeee" style="width: 140px;">Expiration Date</td>
-                              <td class="dark-mode-f5f5f5" align="right" style="color:#333333; font-weight:500;">
+                              <td class="dark-mode-eeeeee mobile-row-label" style="width: 140px;">Expiration Date</td>
+                              <td class="dark-mode-f5f5f5 mobile-row-value" align="right" style="color:#333333; font-weight:500;">
                                 {{expiration_date}}
                               </td>
                             </tr>
@@ -255,8 +327,8 @@
                        font-size:14px;
                        color:#667085;
                        line-height:20px;">
-              If you need to make any changes to the user’s access or require assistance, please contact the IronTrac support team at 
-              <a href="#" style="color:#175FFF; text-decoration:none;">
+              If you need to make any changes to the user’s access or require assistance, please contact the IronTrac support team at
+              <a class="blue-links" href="#" style="color:#175FFF; text-decoration:none;">
                 {{support_email}}
               </a>
             </td>
@@ -271,11 +343,11 @@
                     © {{year}} IronTrac, Do not reply to this email.
                   </td>
 
-                  <td align="right" class="mobile-stack-center" style="font-size:10px; color:#828282; line-height:18px;">
-                    <a href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
+                  <td align="right" class="mobile-stack-center footer-text" style="font-size:10px; color:#828282; line-height:18px;">
+                    <a class="footer-text" href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
                       Privacy Policy
                     </a> |
-                    <a href="#" style="color:#828282; text-decoration:none;">
+                    <a class="footer-text" href="#" style="color:#828282; text-decoration:none;">
                       Terms link
                     </a>
                   </td>
