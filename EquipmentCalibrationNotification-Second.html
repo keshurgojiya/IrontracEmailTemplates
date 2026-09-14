@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="color-scheme: light dark; supported-color-schemes: light dark;">
 
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +23,32 @@
   </noscript>
   <![endif]-->
 
+  <!--
+    Outlook Desktop (Windows) dark-mode text-color lock. See UserInviteDeliveryFailure.html
+    for the full explanation of how/why this works and its limitations (text-color only,
+    background/border still get inverted, results vary by Outlook build).
+  -->
+  <!--[if gte mso 16]>
   <style>
+    .mso-keep-amber {
+      mso-style-textfill-type: gradient;
+      mso-style-textfill-fill-gradientfill-stoplist:"0 \#CCAD3F 0 100000\,100000 \#CCAD3F 0 100000";
+      color: #3352C0 !important;
+    }
+    .mso-keep-red {
+      mso-style-textfill-type: gradient;
+      mso-style-textfill-fill-gradientfill-stoplist:"0 \#EB5757 0 100000\,100000 \#EB5757 0 100000";
+      color: #14A8A8 !important;
+    }
+  </style>
+  <![endif]-->
+
+  <style>
+    html {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+
     @media only screen and (max-width:600px) {
       .container {
         width: 100% !important;
@@ -67,6 +92,7 @@
 
     @media (prefers-color-scheme: dark) {
 
+      html,
       body {
         background-color: #282828 !important;
       }
@@ -133,7 +159,9 @@
     }
 
     /* Outlook.com dark mode (data-ogsc/data-ogsb) */
+    [data-ogsc] html,
     [data-ogsc] body,
+    [data-ogsb] html,
     [data-ogsb] body {
       background-color: #282828 !important;
     }
@@ -305,7 +333,7 @@
                                 E-MTG VB01747
                               </td>
                               <td align="right">
-                                <span class="dark-mode-due-soon-status" style="background:rgba(204, 173, 63, 0.1);
+                                <span class="dark-mode-due-soon-status mso-keep-amber" style="background:rgba(204, 173, 63, 0.1);
                                             color:#CCAD3F;
                                             font-size:12px;
                                             font-weight:500;
@@ -385,7 +413,7 @@
                                 E-MTG VB01747
                               </td>
                               <td align="right">
-                                <span class="dark-mode-canceled-status" style="background:rgba(235, 87, 87, 0.1);
+                                <span class="dark-mode-canceled-status mso-keep-red" style="background:rgba(235, 87, 87, 0.1);
                                             color:#EB5757;
                                             font-size:12px;
                                             font-weight:500;

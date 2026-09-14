@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html style="color-scheme: light dark; supported-color-schemes: light dark;">
 
 <head>
   <meta charset="UTF-8" />
@@ -29,6 +29,11 @@
   <![endif]-->
 
   <style>
+    html {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+
     @media only screen and (max-width:600px) {
       .container {
         width: 100% !important;
@@ -55,6 +60,7 @@
 
     @media (prefers-color-scheme: dark) {
 
+      html,
       body {
         background-color: #282828 !important;
       }
@@ -101,7 +107,9 @@
     }
 
     /* Outlook.com dark mode (data-ogsc/data-ogsb) */
+    [data-ogsc] html,
     [data-ogsc] body,
+    [data-ogsb] html,
     [data-ogsb] body {
       background-color: #282828 !important;
     }

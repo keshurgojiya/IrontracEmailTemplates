@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="color-scheme: light dark; supported-color-schemes: light dark;">
 
 <head>
   <meta charset="UTF-8" />
@@ -26,7 +26,34 @@
   </noscript>
   <![endif]-->
 
+  <!--
+    Outlook Desktop (Windows) dark-mode text-color lock.
+    Outlook for Windows fully inverts every color when the user has dark mode on, and gives
+    no supported way to opt out via normal CSS. This is the one documented workaround: it
+    renders the text as a solid-color "gradient" in light mode (so the gradient wins over
+    the inline color), and sets the inline `color` to the RGB-inverted value of the color we
+    actually want, so when Outlook auto-inverts it, it lands back on the original color.
+    Only affects text color in Outlook 2016+ (mso 16+); every other client ignores this block
+    entirely and just uses the normal inline styles. Background/border colors still get
+    inverted by Outlook regardless — this cannot be prevented — so treat this as a partial,
+    best-effort mitigation, not a full fix.
+  -->
+  <!--[if gte mso 16]>
   <style>
+    .mso-keep-red {
+      mso-style-textfill-type: gradient;
+      mso-style-textfill-fill-gradientfill-stoplist:"0 \#EB5757 0 100000\,100000 \#EB5757 0 100000";
+      color: #14A8A8 !important;
+    }
+  </style>
+  <![endif]-->
+
+  <style>
+    html {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+
     @media only screen and (max-width:600px) {
       .container {
         width: 100% !important;
@@ -70,6 +97,7 @@
 
     @media (prefers-color-scheme: dark) {
 
+      html,
       body {
         background-color: #282828 !important;
       }
@@ -130,7 +158,9 @@
     }
 
     /* Outlook.com dark mode (data-ogsc/data-ogsb) */
+    [data-ogsc] html,
     [data-ogsc] body,
+    [data-ogsb] html,
     [data-ogsb] body {
       background-color: #282828 !important;
     }
@@ -304,7 +334,7 @@
                                 Robert Mike
                               </td>
                               <td align="right">
-                                <span class="dark-mode-failed-status" style="background:rgba(235, 87, 87, 0.1);
+                                <span class="dark-mode-failed-status mso-keep-red" style="background:rgba(235, 87, 87, 0.1);
                                             color:#EB5757;
                                             font-size:12px;
                                             font-weight:500;
