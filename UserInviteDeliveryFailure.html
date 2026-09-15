@@ -144,7 +144,7 @@
       }
 
       .dark-mode-failed-status {
-        background: #453737 !important;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mNwNTcHAAF4ALTcxwL5AAAAAElFTkSuQmCC) !important;
         color: #eb5757 !important;
         border-color: #eb5757 !important;
       }
@@ -226,7 +226,7 @@
 
     [data-ogsc] .dark-mode-failed-status,
     [data-ogsb] .dark-mode-failed-status {
-      background: #453737 !important;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mNwNTcHAAF4ALTcxwL5AAAAAElFTkSuQmCC) !important;
       color: #eb5757 !important;
       border-color: #eb5757 !important;
     }
@@ -335,7 +335,9 @@
                                 Robert Mike
                               </td>
                               <td align="right">
-                                <span class="dark-mode-failed-status mso-keep-red" style="background:rgba(235, 87, 87, 0.1);
+                                <span class="dark-mode-failed-status mso-keep-red" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR42mP4++4dAAXFAtooqEYJAAAAAElFTkSuQmCC);
+                                            background-size:100% 100%;
+                                            background-repeat:no-repeat;
                                             color:#EB5757;
                                             font-size:12px;
                                             font-weight:500;
@@ -402,9 +404,9 @@
               This email was sent to
               <a class="blue-links" href="mailto:irontrac@mail.com" style="color:#175FFF; text-decoration:none;">Irontrac@mail.com</a>.
               If you'd rather not receive this kind of email, you can
-              <a class="blue-links" href="#" style="color:#175FFF; text-decoration:none;">unsubscribe</a>
+              <a class="blue-links" href="{{Unsubscribe Link}}" style="color:#175FFF; text-decoration:none;">unsubscribe</a>
               or
-              <a class="blue-links" href="#" style="color:#175FFF; text-decoration:none;">
+              <a class="blue-links" href="{{Manage Preferences Link}}" style="color:#175FFF; text-decoration:none;">
                 manage your email preferences</a>.
             </td>
           </tr>
@@ -422,7 +424,7 @@
                     <a class="footer-text" href="https://www.irontrac.com/privacy" style="color:#828282; text-decoration:none;">
                       Privacy Policy
                     </a> |
-                    <a class="footer-text" href="#" style="color:#828282; text-decoration:none;">
+                    <a class="footer-text" href="{{Terms Link}}" style="color:#828282; text-decoration:none;">
                       Terms link
                     </a>
                   </td>
